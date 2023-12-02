@@ -1,0 +1,125 @@
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <meta name="theme-color" content="#007aff">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" href="assets/icons/favicon.png">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="framework7/framework7-bundle.min.css">
+    <link rel="stylesheet" href="css/icons.css">
+
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="panel panel-left panel-reveal panel-init">
+
+            <div class="view view-left">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-bg"></div>
+                        <div class="navbar-inner sliding">
+                            <div class="title">Меню</div>
+                        </div>
+                    </div>
+
+                    <div class="page-content menu">
+                        <div class="list links-list">
+                            <ul>
+                                <li><a href="/author/">Автор</a></li>
+                                <li><a href="/help/">Помощ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="view view-main">
+            <div class="page" data-name="home">
+                <div class="navbar">
+                    <div class="navbar-bg"></div>
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only panel-open" data-panel="left">
+                                <i class="icon f7-icons if-not-md">menu</i>
+                                <i class="icon material-icons if-md">menu</i>
+                            </a>
+                        </div>
+
+
+
+                            <div id="header">
+                                <div id="monthDisplay" class = "months"></div>
+                                <div id = "buttonsForMonths">
+                                    <button id="backButton">Предишен месец</button>
+                                    <button id="nextButton">Следващ месец</button>
+                                </div>
+                            </div>
+
+
+
+
+                    </div>
+                </div>
+    <div class="page">
+        <div class="page-content">
+            <div id="container">
+
+
+      <div id="weekdays">
+        <div>Пн</div>
+        <div>Вт</div>
+        <div>Ср</div>
+        <div>Чт</div>
+        <div>Пт</div>
+        <div>Сб</div>
+        <div>Нд</div>
+      </div>
+
+      <div id="calendar"></div>
+    </div>
+
+    <div id="newEventModal">
+      <h2>Ново събитие</h2>
+
+      <input id="eventTitleInput" placeholder="Име на събитието" />
+      <button id="saveButton">Запиши</button>
+      <button id="cancelButton">Отказ</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Събитие:</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Изтрий</button>
+      <button id="closeButton">Затвори</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+        </div>
+    </div>
+
+    <script src="framework7/framework7-bundle.min.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+    <script src="components/loader.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

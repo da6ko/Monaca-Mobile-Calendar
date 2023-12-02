@@ -1,0 +1,366 @@
+body {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    background-color: #FFFCFF;
+  }
+  button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  #header {
+    padding: 10px;
+    color: #d36c6c;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #header button {
+    background-color:#92a1d1;
+  }
+  #container {
+    width: 770px;
+    margin:auto;
+  }
+  #weekdays {
+    width: 100%;
+    display: flex;
+    color: #247BA0;
+  }
+  #weekdays div {
+    width: 100px;
+    padding: 10px;
+  }
+  #calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .day { 
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .day:hover {
+    background-color: #e8faed;
+  }
+  
+  .day + #currentDay {
+    background-color:#e8f4fa;
+  }
+  .event {
+      height: 25px;
+      width: 25px;
+      background-color: #910d16;
+      border-radius: 50%;
+      display: inline-block;
+      color: transparent;
+  }
+  .padding {
+    cursor: default !important;
+    background-color: #FFFCFF !important;
+    box-shadow: none !important;
+  }
+  #newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: #e8f4fa;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    position: absolute;
+    font-family: sans-serif;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  #eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+  }
+  #eventTitleInput.error {
+    border: 2px solid red;
+  }
+  #cancelButton, #deleteButton {
+    background-color: #d36c6c;
+  }
+  #saveButton, #closeButton {
+    background-color: #92a1d1;
+  }
+  #eventText {
+    font-size: 14px;
+  }
+  #modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .months
+  {
+    text-transform:uppercase;
+  }
+
+   #buttonsForMonths
+  {
+    position:absolute;
+    margin-left: 70%;
+    display: inline-flex;
+    margin-bottom: 1%;
+  }
+
+@media only screen and (max-width: 1440px) {
+  body {
+    margin-top: 5px;
+  }
+  #buttonsForMonths
+  {
+    position:absolute;
+    margin-left: 70%;
+    display:inline-flex;
+    margin-bottom: 1%;
+  }
+  button {
+    width: 100px;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 25%;
+    margin-bottom:2px;
+  }
+  #header {
+    padding: 10px;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+  #container {
+    width: 560px;
+  }
+  #weekdays {
+    width: 100%;
+    display: flex;
+    color: #247BA0;
+    font-size:10px;
+  }
+  #weekdays div {
+    width: 13%;
+    padding: 8px;
+  }
+  #calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .day { 
+    width: 70px;
+    padding: 10px;
+    height: 70px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .event {
+    height: 40%;
+    width: 40%;
+    margin-top: 6px;
+}
+}
+
+  @media only screen and (max-width: 1000px) {
+  body {
+    margin-top: 5px;
+}
+
+  button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size:35%;
+  }
+  
+#buttonsForMonths
+  {
+    margin-left: 70%;
+    margin-bottom: 0%;
+  }
+
+  #header {
+    padding: 5px;
+    font-size: 90%;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+  #container {
+    width: 371px;
+}
+  #weekdays {
+    width: 100%;
+    display: flex;
+    color: #247BA0;
+    font-size:3px;
+}
+  #weekdays div {
+    width: 50px;
+    padding: 5px;
+}
+  .day { 
+    width: 43px;
+    padding: 10px;
+    height: 43px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  #eventText {
+    font-size: 5px;
+}
+
+  #calendar {
+    font-size:8px;
+}
+
+  .event {
+    height: 20%;
+    width: 20%;
+    background-color: #910d16;
+    border-radius: 50%;
+    margin-top:6px;
+    display: inline-block;
+    color: transparent;
+}
+}
+
+
+  @media only screen and (max-width: 700px) {
+  body {
+    margin-top: 5px;
+}
+
+  button {
+    width: 100px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 2px;
+    border-radius: 5px;
+    color: white;
+    font-size: 35%;
+    margin-bottom:10px;
+  }
+  #buttonsForMonths
+  {
+    margin-left: 65%;
+    margin-bottom: -1%;
+  }
+  #header {
+    padding: 5px;
+    font-size: 90%;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+  #container {
+    width: 371px;
+}
+  #weekdays {
+    width: 100%;
+    display: flex;
+    color: #247BA0;
+    font-size:3px;
+}
+  #weekdays div {
+    width: 50px;
+    padding: 5px;
+}
+  .day { 
+    width: 43px;
+    padding: 10px;
+    height: 43px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  #eventText {
+    font-size: 5px;
+}
+
+  #calendar {
+    font-size:8px;
+}
+
+  .event {
+    height: 20%;
+    width: 20%;
+    background-color: #910d16;
+    border-radius: 50%;
+    margin-top:6px;
+    display: inline-block;
+    color: transparent;
+}
+  #newEventModal, #deleteEventModal {
+    width: 250px;
+    height: 150px;
+}
+  #modalBackDrop {
+    width: 120%;
+    height: 120%;
+}
+}
